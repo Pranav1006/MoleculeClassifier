@@ -1,9 +1,11 @@
 import torch, os, csv
 from torch import nn
-from torch.utils.data import DataLoader
+from torch.utils.data import DataLoader, Dataset
 from torchvision import datasets, transforms
 from torchvision.transforms import ToTensor, Lambda
 import matplotlib.pyplot as plt
+
+
 
 # The training data of digits
 training_data = datasets.MNIST(
@@ -90,3 +92,4 @@ for t in range(epochs):
     print(f"Epoch {t+1}\n-------------------------------")
     train(train_dataloader, model, loss_fn, optimizer)
     test(test_dataloader, model, loss_fn)
+torch.save(model, "models/model2.pth")
