@@ -92,4 +92,4 @@ for t in range(epochs):
     print(f"Epoch {t+1}\n-------------------------------")
     train(train_dataloader, model, loss_fn, optimizer)
     test(test_dataloader, model, loss_fn)
-torch.save(model, "models/model2.pth")
+torch.save(model.state_dict(), "models/model1.pth")
